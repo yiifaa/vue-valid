@@ -1,7 +1,7 @@
 <template>
 	<header class="navbar navbar-static-top navbar-inverse" role="banner">
 		<div class="container">
-			<div class="navbar-header"> 
+			<div class="navbar-header">
 				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
 					<span class="sr-only">{{$t('app.collapse')}}</span>
 					<span class="icon-bar"></span>
@@ -12,10 +12,10 @@
 			</div>
 			<ul class="nav navbar-nav">
 				<li>
-					<a href="../getting-started/">{{$t('menu.basic')}}</a>
+					<a href="/valid">{{$t('menu.basic')}}</a>
 				</li>
 				<li>
-					<a href="../css/">{{$t('menu.async')}}</a>
+					<a href="/valid/">{{$t('menu.async')}}</a>
 				</li>
 				<li class="active">
 					<a href="../components/">{{$t('menu.conn')}}</a>
@@ -31,7 +31,7 @@
 				</li>
 			</ul>
 		</div>
-		
+
 	</header>
 	<div class="container">
 		<div class="row">
@@ -81,7 +81,7 @@
 					</li>
 				</ul>
 			</div>
-		</div>		
+		</div>
 	</div>
 </template>
 
