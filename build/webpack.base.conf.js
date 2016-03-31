@@ -22,6 +22,7 @@ module.exports = {
     fallback: [path.join(__dirname, '../node_modules')]
   },
   module: {
+		/**
     preLoaders: [
       {
         test: /\.vue$/,
@@ -36,6 +37,7 @@ module.exports = {
         exclude: /node_modules/
       }
     ],
+	**/
     loaders: [
       {
         test: /\.vue$/,

@@ -30,6 +30,7 @@ export default {
 }
 </script>
 
+<style src=""></style>
 <style>
 html {
   height: 100%;
