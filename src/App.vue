@@ -1,23 +1,88 @@
 <template>
-  <div id="app">
-    <img class="logo" src="./assets/logo.png">
-    <hello></hello>
-    <p>
-      Welcome to your Vue.js app. To get started, take a look at the
-      <a href="https://github.com/vuejs-templates/webpack#folder-structure" target="_blank">README</a>
-      of this template. If you have any issues with the setup, please file an issue at this template's repository.
-    </p>
-    <p>
-      For advanced configurations, checkout the docs for
-      <a href="http://webpack.github.io/" target="_blank">Webpack</a> and
-      <a href="http://vuejs.github.io/vue-loader/" target="_blank">vue-loader</a>.
-    </p>
-    <p>
-      You may also want to checkout
-      <a href="https://github.com/vuejs/vue-router/" target="_blank">vue-router</a> for routing and
-      <a href="https://github.com/vuejs/vuex/" target="_blank">vuex</a> for state management.
-    </p>
-  </div>
+	<header class="navbar navbar-static-top navbar-inverse" role="banner">
+		<div class="container">
+			<div class="navbar-header"> 
+				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+					<span class="sr-only">收缩导航</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="/" class="navbar-brand">Vue-Valid</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="../getting-started/">基本验证</a>
+				</li>
+				<li>
+					<a href="../css/">异步验证</a>
+				</li>
+				<li class="active">
+					<a href="../components/">关联验证</a>
+				</li>
+				<li>
+					<a href="../javascript/">动态验证</a>
+				</li>
+				<li>
+					<a href="../javascript/">自定义验证</a>
+				</li>
+				<li>
+					<a href="../customize/">国际化</a>
+				</li>
+			</ul>
+		</div>
+		
+	</header>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9" role="main">
+				<div class="page-header">
+				  <h3>用户注册<small>填写个人基本信息,用于唯一地辨识用户指纹</small></h3>
+				</div>
+				<form class="form-horizontal">
+				  <div class="form-group">
+				    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+				    <div class="col-sm-10">
+				      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+				    <div class="col-sm-10">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <div class="checkbox">
+					<label>
+					  <input type="checkbox"> Remember me
+					</label>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button type="submit" class="btn btn-default">Sign in</button>
+				    </div>
+				  </div>
+				</form>
+			</div>
+			<div class="col-md-3" role="complementary">
+				<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+					<li role="presentation" class="active">
+						<a href="#">自动验证</a>
+					</li>
+					<li role="presentation">
+						<a href="#">提交时验证</a>
+					</li>
+					<li role="presentation">
+						<a href="#">延迟验证</a>
+					</li>
+				</ul>
+			</div>
+		</div>		
+	</div>
 </template>
 
 <script>
@@ -30,28 +95,19 @@ export default {
 }
 </script>
 
-<style src=""></style>
-<style>
-html {
-  height: 100%;
-}
+<style src="../node_modules/bootstrap/dist/css/bootstrap.css"></style>
+<style lang="less">
+	.page-header {
+		margin-top : 0px;
+		>h3 {
+			font-weight : bolder;
+			margin-top : 0px;
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-#app {
-  margin-top: -100px;
-  max-width: 600px;
-  font-family: Helvetica, sans-serif;
-  text-align: center;
-}
-
-.logo {
-  width: 100px;
-  height: 100px
-}
+			small {
+				font-size : 12px;
+				display : in-block;
+				margin-left : 15px;
+			}
+		}
+	}
 </style>
