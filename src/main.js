@@ -1,8 +1,13 @@
 import Vue from 'vue'
 import App from './App'
+import i18nMixin from './commons/i18nMixin'
 
-/* eslint-disable no-new */
 new Vue({
   el: 'body',
-  components: { App }
+
+  mixins : [i18nMixin],
+
+  components: {
+	  App
+	}
 })
