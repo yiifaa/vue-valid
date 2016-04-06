@@ -3,47 +3,55 @@ import App from './App'
 import i18nMixin from './commons/i18nMixin'
 import pageMixin from './commons/pageMixin'
 import page from 'page'
+//import qs        from 'qs'
+import qs from './QueryString'
 
-
-
+/**
+ * 提供基础性服务
+ */
 new Vue({
+
   el: 'body',
 
   mixins : [i18nMixin, pageMixin],
 
-  data      : function() {
-    return {
-      counter : 0
-    };
-  },
-
+  /**
+   * 只注册唯一的组件
+   */
   components: {
 	  App
   },
 
   created : function() {
-    this.$register("/valid", (context, next) => {
-      console.debug(context);
-    });
+    'use strict'
+    this.route();
 
-    //let fn = (x, y = 2) => x + y;
-    var g = ({x, y = 13}) => x + y;
-    function fn({x, y = 17}) {
-      return x + y;
-    }
-    function gn(x, {y = 3, z = 1} = {}) {
-      return x + y + z;
+  },
+
+  methods : {
+
+    route () {
+
+      let viewFn = (context, next) => {
+        let params = context.params,
+          view   = params.view;
+        alert(1000)
+        //context.query = qs.parse(context.querystring);
+        this.$broadcast("view.changed", view, params, query, context);
+      };
+      /**
+      this.$register('*', (ctx, next) => {
+        ctx.query = qs.parse(ctx.querystring);
+        alert(2000)
+        //next();
+      })
+       */
+      //this.$register("/", viewFn);
+      //this.$register("/:view", viewFn);
+      this.$register("/:view/:id", viewFn);
+      this.$start();
     }
 
-    function add(...values) {
-      let sum = 0;
-      for(var val of values) {
-        sum += val;
-      }
-      return sum;
-    }
-    //this.counter = fn(5);
-    this.counter = add(1, 2, 3);
   }
 
 

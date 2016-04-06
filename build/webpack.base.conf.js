@@ -1,6 +1,8 @@
 var path = require('path')
 var cssLoaders = require('./css-loaders')
 var projectRoot = path.resolve(__dirname, '../')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+
 
 module.exports = {
   entry: {
@@ -57,6 +59,18 @@ module.exports = {
         test: /\.html$/,
         loader: 'vue-html'
       },
+	  {
+		test: /\.css$/,
+		loader: "css-loader"
+	  },
+	  {
+			test: /\.scss$/,
+			loader: "css-loader!sass-loader"
+	   },
+	   {
+			test: /\.less$/,
+			loader: "css-loader!less-loader"
+	   },
       {
         test: /\.(png|jpg|gif|svg|woff2?|eot|ttf)(\?.*)?$/,
         loader: 'url',

@@ -12,6 +12,7 @@ export default {
   },
 
   initPage     : function(Vue, options) {
+    /**
     page({
       //激活页面点击
       click                       : true,
@@ -21,6 +22,12 @@ export default {
       hashbang                   : false,
       decodeURLComponents       : true
     });
+
+    page("*", function(ctx, next) {
+      console.debug(ctx);
+      next();
+    });
+     **/
   },
 
 
@@ -38,9 +45,19 @@ export default {
 
     };
 
-    Vue.prototype.$pathTo = function(url) {
-      path(url);
+    Vue.prototype.$page  = page;
+
+    Vue.prototype.$redirect = function(url) {
+      page.redirect(url);
     };
+
+    Vue.prototype.$forward = function(url) {
+      page(url);
+    };
+
+    Vue.prototype.$start = function() {
+      page.start();
+    }
   }
 
 
